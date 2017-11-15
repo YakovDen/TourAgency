@@ -1,3 +1,9 @@
+**/.settings/**
+**/target/**
+**/.classpath
+**/.project
+**/.tern-project
+
 # Compiled class file
 *.class
 
