@@ -1,0 +1,32 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+             http://www.springframework.org/schema/beans/spring-beans.xsd
+             http://www.springframework.org/schema/security
+             http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http auto-config="true">
+		<intercept-url pattern="/web-content/**" access="permitAll" />
+		<intercept-url pattern="/login.html" access="permitAll" />
+		<intercept-url pattern="/logout.html" access="permitAll" />
+		<intercept-url pattern="/access_denided.html" access="permitAll" />
+		<intercept-url pattern="/custom-auth.html" access="permitAll" />
+		<intercept-url pattern="/**" access="isAuthenticated()" />
+
+		<form-login login-page="/login.html" 
+					authentication-failure-url="/access_denided.html"
+					username-parameter="login" 
+					password-parameter="password" />
+
+		<logout logout-url="/logout.html" />
+
+		<csrf disabled="true" />
+	</http>
+
+    <authentication-manager>        
+       <authentication-provider ref="customAuthenticationProvider"/>     
+    </authentication-manager>	
+	
+ <beans:bean id="customAuthenticationProvider" class="serviceImpl.security.CustomAuthenticationProvider"/>
+</beans:beans>

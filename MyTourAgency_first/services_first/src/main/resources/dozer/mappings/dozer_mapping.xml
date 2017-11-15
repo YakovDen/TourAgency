@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+		
+	<mapping map-id="country">	
+		<class-a>beans.CountryBean</class-a>
+		<class-b>agency.Country</class-b>		
+		
+		<!-- <field custom-converter="serviceImpl.CountryConverter"> -->
+		<field>
+			<a>countryId</a>
+			<b>id_country</b>
+		</field>
+			
+	</mapping>
+	
+	<mapping map-id="city">	
+		<class-a>beans.CityBean</class-a>
+		<class-b>agency.City</class-b>	
+				
+		<field>
+			<a>cityId</a>
+			<b>id</b>			
+		</field>
+						
+	</mapping>
+	
+	<mapping map-id="user">	
+		<class-a>beans.UserBean</class-a>
+		<class-b>agency.User</class-b>		
+		
+		<field>
+			<a>id</a>
+			<b>id_user</b>			
+		</field>
+		<field>
+			<a>userName</a>
+			<b>username</b>			
+		</field>						
+	</mapping>
+	
+	<mapping map-id="role">	
+		<class-a>beans.RoleBean</class-a>
+		<class-b>agency.Role</class-b>	
+				
+		<field>
+			<a>id</a>
+			<b>role_id</b>			
+		</field>
+						
+	</mapping>	
+
+</mappings>

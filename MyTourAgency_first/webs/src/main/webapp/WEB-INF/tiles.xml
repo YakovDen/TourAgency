@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <definition name="default" template="/WEB-INF/templates/default.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="header" value="/WEB-INF/templates/header.jsp"/>
+        <put-attribute name="userInfo" value="/WEB-INF/templates/userInfo.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/templates/footer.jsp"/>
+    </definition>
+    
+	 <definition name="login" extends="default">  
+          <put-attribute name="title" value="Login Page"/>
+          <put-attribute name="header" value="/WEB-INF/templates/loginHeader.jsp"/>
+          <put-attribute name="userInfo" value="/WEB-INF/templates/blank.jsp"/> 
+          <put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
+          <put-attribute name="footer" value="/WEB-INF/templates/loginFooter.jsp"/>  
+       </definition>  
+    
+      <definition name="welcome" extends="default">  
+          <put-attribute name="title" value="Welcome Page"/>  
+          <put-attribute name="body" value="/WEB-INF/views/welcome.jsp"/>  
+      </definition>  
+
+	<definition name="touragent" extends="default">
+        <put-attribute name="title" value="Administrator page"/>
+        <put-attribute name="body" value="/WEB-INF/views/touragent/touragent.jsp"/>
+    </definition>
+
+	<definition name="customer" extends="default">
+        <put-attribute name="title" value="Customer Page"/>
+        <put-attribute name="body" value="/WEB-INF/views/customer/customer.jsp"/>
+    </definition>
+ 
+ 	<definition name="usertours" extends="default">
+        <put-attribute name="title" value="Customer Page"/>
+        <put-attribute name="body" value="/WEB-INF/views/customer/usertours.jsp"/>
+    </definition>
+    
+    <definition name="hot_tour" extends="default">
+        <put-attribute name="title" value="Customer Page"/>
+        <put-attribute name="body" value="/WEB-INF/views/customer/hot_tour.jsp"/>
+    </definition>
+    
+     <definition name="desired_date" extends="default">
+        <put-attribute name="title" value="Customer Page"/>
+        <put-attribute name="body" value="/WEB-INF/views/customer/desired_date.jsp"/>
+    </definition>
+    
+    <definition name="custom-auth" extends="default">
+     	  <put-attribute name="title" value="Registration Page"/>
+          <put-attribute name="header" value="/WEB-INF/templates/loginHeader.jsp"/>
+          <put-attribute name="userInfo" value="/WEB-INF/templates/blank.jsp"/>         
+        <put-attribute name="body" value="/WEB-INF/views/custom-auth.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/templates/loginFooter.jsp"/>
+    </definition>
+
+</tiles-definitions>
